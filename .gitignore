@@ -15,3 +15,6 @@ venv/
 .fido2_credentials.json
 *.keys
 *.pem
+uploads/
+.admin_token
+.nightmare_unlock

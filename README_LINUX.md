@@ -14,7 +14,9 @@ with matching copies on both sides.
   on file.
 - New files in this clone only: `linux_compat.py`, `run_suite.sh`,
   `check_suite.sh`, `requirements.txt`, `.gitignore`,
-  `README_LINUX.md`, `SALE_AUDIT_2026-11-02.md`.
+  `README_LINUX.md`, `SALE_AUDIT_2026-11-02.md`, plus API engine:
+  `nightmare_bridge.py`, `start_api.sh`, `API_ENGINE_LINUX.md`.
+  API engine is loopback-only, token-gated, /tool off by default, /fluid 501.
 
 ## Start
 
@@ -51,3 +53,16 @@ Windows Sale copy and this Linux clone share the same .py code, so:
 - Failure only on one = platform difference, named by the logs from both sides.
 - Do NOT edit Sale .py files in only one copy and then compare — that
   breaks the matching, and the diff will lie about what failed.
+
+## API engine (Core Runner / Bridge)
+
+```sh
+export NTMRE_ADMIN_TOKEN="your-long-random-token-here"
+./start_api.sh
+curl http://127.0.0.1:1345/health
+curl -H "X-Admin-Token: $NTMRE_ADMIN_TOKEN" http://127.0.0.1:1345/status
+```
+
+See API_ENGINE_LINUX.md. /tool is off by default, /fluid is 501 here,
+no hardcoded token, bind is loopback only. Real model test still needs
+Matrix / Linux+GPU with a real GGUF / .ntmre model.
