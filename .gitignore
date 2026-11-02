@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+logs/
+CRASH_LOG.txt
+chat_history/
+models/
+*.gguf
+*.ntmre
+*.safetensors
+*.bin
+*.pt
+venv/
+.venv/
+.fido2_credentials.json
+*.keys
+*.pem

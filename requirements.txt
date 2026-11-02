@@ -1,0 +1,18 @@
+# Nightmare Suite — Linux clone — optional packages
+# Stdlib + tkinter are required to start. Everything below is optional:
+# missing packages do NOT stop startup, they stop only the tool that needs them.
+# Install with: pip install -r requirements.txt
+# (Use a venv on Debian/Ubuntu: python3 -m venv venv && venv/bin/pip install -r requirements.txt)
+numpy
+torch
+Pillow
+psutil
+requests
+cryptography
+pycryptodome
+fido2
+scipy
+python-docx
+openpyxl
+python-pptx
+pypdf
